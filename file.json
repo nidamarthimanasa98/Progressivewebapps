@@ -9,6 +9,41 @@
 
 	"CareerObjectives": {
 		"info": "To be a successful engineer."
-	}
+	},
 
+	"education":[
+		{
+		"degree":"B.Tech",
+		"institute":"SRKR College",
+		"data":["2016-2020","80.8%"]
+	},
+{
+		"degree":"intermediate",
+		"institute":"Sri Chaitanya College",
+		"data":["2014-2016","97.3%"]
+	},
+	{
+		"degree":"SSC",
+		"institute":"RBPS school",
+		"data":["2014","98%"]
+	}
+],
+
+"skills":[
+	{
+		"title":"languages",
+		"data":["c","c++","java","ruby","python"]
+	},
+	{
+		"title":"database",
+		"data":["sql","mysql","oracle"]
+	},
+	{
+		"title":"Operating Systems",
+		"data":["windows","linux","unix"]
+	}
+],
+"achievements":{
+	"a2":"Participant in SIH"
 }
+	}

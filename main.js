@@ -15,6 +15,9 @@ getfile("file.json",function(text){
   console.log(data);
   details(data.basics);
   CareerObjectives(data.CareerObjectives);
+  education(data.education);
+  skills(data.skills);
+  achievements(data.achievements);
 })
 var child=document.querySelector(".childone");
 function details(det){
@@ -52,9 +55,73 @@ function CareerObjectives(careerinfo){
   info.textContent=careerinfo.info;
   child2.appendChild(info);
 
+}
+function education(edu){
+  var ed=document.createElement("h2");
+  ed.textContent="EDUCATIONAL QUALIFICATIONS:";
+  child2.appendChild(ed);
+
+  var hr=document.createElement("hr");
+  child2.appendChild(hr);
+  for(i=0;i<edu.length;i++){
+    var deg=document.createElement("h3");
+    deg.textContent=edu[i].degree;
+    child2.appendChild(deg);
+
+    var eduul=document.createElement("ul");
+    var eduli=document.createElement("li");
+    eduli.textContent=edu[i].institute;
+    eduul.appendChild(eduli);
+    child2.appendChild(eduul);
+
+    var eduli2=document.createElement("li");
+    eduli2.textContent=edu[i].data;
+    eduul.appendChild(eduli2);
+    child2.appendChild(eduul);
+  }
+}
+function skills(skillinfo){
+    var tec=document.createElement("h2");
+    tec.textContent="TECHNICAL SKILLS:";
+    child2.appendChild(tec);
+
+    var hr=document.createElement("hr");
+    child2.appendChild(hr);
+    var skilldata=document.createElement("table");
+    skilldata.border="5";
+    child2.appendChild(skilldata);
+    tabledata="";
+    for(i=0;i<skillinfo.length;i++){
+      tabledata+="<tr><td>"+skillinfo[i].title+"</td><td>"+skillinfo[i].data+"</td></tr>"
+    }
+    skilldata.innerHTML=tabledata;
+    // for(i=0;i<skillinfo.length;i++){
+    //   var lang=document.createElement("h3");
+    //   lang.textContent=skillinfo[i].title;
+    //   child2.appendChild(lang);
+    //
+    //   var lang1=document.createElement("ul");
+    //   var lang2=document.createElement("li");
+    //   lang2.textContent=skillinfo[i].data;
+    //   lang1.appendChild(lang2);
+    //   child2.appendChild(lang1);
+    //
+        }
+        function achievements(a){
+          var a1=document.createElement("h2");
+          a1.textContent="ACHIEVEMENTS:";
+          child2.appendChild(a1);
+          var hr=document.createElement("hr");
+          child2.appendChild(hr);
+          var a2=document.createElement("h4");
+          a2.textContent=a.a2;
+          child2.appendChild(a2);
+
+}
 
 
-}//
+
+//
 // function Loadjson(file) {
 //   return new Promise((resolve,reject)=>{
 //     return fetch(file).then(response=>{
